@@ -1,5 +1,5 @@
 import { Database as ArangoDB } from "arangojs";
-import { DocumentCollection } from "arangojs/collection";
+import { DocumentCollection } from "arangojs/collection.js";
 
 const ARANGO_URL = process.env.ARANGO_URL || "http://127.0.0.1:8529/";
 const ARANGO_USERNAME = process.env.ARANGO_USERNAME || process.env.ARANGO_USER || "root";

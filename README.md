@@ -1,26 +1,49 @@
-# Estudia
+# 🎓 Estudia
 
-Monorepo para um futuro ecossistema de estudos, combinando backend (Node.js + TypeScript + ArangoDB) e frontend (React + TypeScript + Vite).
+Monorepo para um futuro ecossistema de estudos, combinando backend (Node.js + TypeScript + ArangoDB + GraphQL) e frontend (React + TypeScript + Vite).
 
-> **Status:** Projeto em fase inicial — estrutura básica, pronto para crescer e receber muitas features.
+> **Status:** Projeto em fase inicial — estrutura básica pronta, preparada para crescer e receber novas features.
 
 ---
 
-## Visão Geral
+## 🚀 Visão Geral
 
-O Estudia nasce como uma base sólida para evoluir rapidamente. O objetivo é criar um ambiente flexível, escalável e moderno, facilitando a adição de novas funcionalidades ao longo do tempo.
+O Estudia nasce como uma base sólida e escalável. O objetivo é criar um ambiente moderno, flexível e organizado, facilitando a evolução e a adição de novas funcionalidades ao longo do tempo.
 
-- **Backend:** Node.js, TypeScript, ArangoDB (orientado a grafos)
+- **Backend:** Node.js, TypeScript, ArangoDB (orientado a grafos), GraphQL (Apollo Server)
 - **Frontend:** React, TypeScript, Vite
 - **Infra:** Docker para banco de dados
 
 ---
 
-## Estrutura do Projeto
+## 🔧 Tecnologias e Integrações
+
+### Backend
+
+- **Node.js + TypeScript** → estrutura tipada e robusta
+- **ArangoDB** → banco orientado a grafos, integração via [arangojs](https://github.com/arangodb/arangojs)
+- **GraphQL (Apollo Server)** → API principal
+- **dotenv** → gerenciamento de variáveis de ambiente
+- **Docker** → banco isolado e fácil de rodar
+
+### Frontend
+
+- **React + TypeScript + Vite** → SPA moderna, pronta para expansão
+- **ESLint + Prettier** → padronização e consistência no código
+- **Integração futura** → API GraphQL ainda não consumida, mas já preparada
+
+### Infraestrutura
+
+- **Docker Compose** → setup automatizado do ArangoDB
+- **Volumes persistentes** → dados do ArangoDB armazenados em `docker-data/`
+
+---
+
+## 📂 Estrutura do Projeto
 
 ```
 estudia/
-  backend/    # API, lógica de negócio, integração com ArangoDB
+  backend/    # API, lógica de negócio, integração com ArangoDB e GraphQL
     src/
       controllers/
       services/
@@ -34,6 +57,7 @@ estudia/
     .env
     package.json
     tsconfig.json
+
   frontend/   # SPA em React + Vite
     src/
       App.tsx
@@ -45,13 +69,14 @@ estudia/
     public/
     package.json
     tsconfig.json
+
   compose.yaml
   README.md
 ```
 
 ---
 
-## Primeiros Passos
+## ⚡ Primeiros Passos
 
 ### Pré-requisitos
 
@@ -83,9 +108,10 @@ npm install
 npm run dev
 ```
 
-Saída esperada:
+**Saída esperada:**
+
 ```
-✅ Conectado ao Arango e usando DB: estudia.
+🚀 Servidor GraphQL rodando em: http://localhost:4000
 ```
 
 ### Rodando o Frontend
@@ -96,33 +122,39 @@ npm install
 npm run dev
 ```
 
-Acesse a URL exibida (geralmente http://localhost:5173).
+**Acesse no navegador (geralmente):**
+👉 http://localhost:5173
 
 ---
 
-## Convenções e Organização
+## 📐 Convenções e Organização
 
-- Estrutura MVC já preparada no backend (controllers, services, repositories, etc.)
-- Frontend criado via Vite, pronto para componentes React e integração futura
-- Uso de TypeScript em todo o projeto
-- Banco orientado a grafos (ArangoDB) para máxima flexibilidade
-- Docker Compose para facilitar o setup do banco
+- Estrutura MVC preparada no backend (healthcontrollers, services, repositories, etc.)
+- TypeScript em todo o projeto
+- Frontend criado via Vite, pronto para integração
+- Banco orientado a grafos (ArangoDB) para flexibilidade
+- Docker Compose para setup rápido do banco
+- API GraphQL como padrão de comunicação
 
 ---
 
-## Roadmap Inicial (exemplo de próximos passos)
+## 🗺️ Roadmap Inicial
 
-- [ ] Fundamentos de GraphQL
-- [ ] Conexão backend ↔ banco (queries reais)
-- [ ] Primeira query no backend
+- [x] Estrutura inicial do monorepo
+- [x] Integração com ArangoDB via Docker
+- [x] API GraphQL funcional no backend
+- [ ] Integração real backend ↔ banco
+- [ ] Primeira query GraphQL conectando dados reais
 - [ ] Métricas por usuário (sessions, tópicos, streaks)
-- [ ] Início da API REST/GraphQL
+- [ ] Integração do frontend com GraphQL
 - [ ] Primeiros componentes de UI
 - [ ] Autenticação e autorização
 - [ ] Testes automatizados
 
 ---
 
-## Observações
+## 📌 Observações
 
-Este projeto está em sua fase mais embrionária. O foco é padronização, base sólida e arquitetura limpa para permitir a adição de MUITAS features no futuro. Sinta-se à vontade para sugerir, contribuir e experimentar!
+Projeto ainda em fase inicial. O foco atual é padronização, base sólida e arquitetura limpa para facilitar a adição de funcionalidades no futuro.
+
+**Contribuições, sugestões e experimentações são bem-vindas!** 🎉
